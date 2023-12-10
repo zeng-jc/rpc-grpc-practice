@@ -5,7 +5,11 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/my-app/tsconfig.app.json"
+    "tsConfigPath": "apps/my-app/tsconfig.app.json",
+    "assets": [
+      "**/*.proto"
+    ],
+    "watchAssets": true
   },
   "monorepo": true,
   "root": "apps/my-app",
@@ -35,6 +39,24 @@
       "sourceRoot": "apps/rpc-consumer/src",
       "compilerOptions": {
         "tsConfigPath": "apps/rpc-consumer/tsconfig.app.json"
+      }
+    },
+    "grpc-provider": {
+      "type": "application",
+      "root": "apps/grpc-provider",
+      "entryFile": "main",
+      "sourceRoot": "apps/grpc-provider/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/grpc-provider/tsconfig.app.json"
+      }
+    },
+    "grpc-client": {
+      "type": "application",
+      "root": "apps/grpc-client",
+      "entryFile": "main",
+      "sourceRoot": "apps/grpc-client/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/grpc-client/tsconfig.app.json"
       }
     }
   }
